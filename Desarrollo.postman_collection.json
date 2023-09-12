@@ -62,7 +62,7 @@
 					"raw": "{\"Connect\":{\"@UidApp\":\"B49D2CE699\",\"@PwdApp\":\"B0\",\"@SessionKey\":\"EA5BD0713633FEB5A1DEA91E0B272EAB\",\"@Product\":\"2\",\"@LanguageId\":\"8\",\"@RequestID\":\"1\"}}",
 					"options": {
 						"raw": {
-							"language": "json"
+							"language": "text"
 						}
 					}
 				},
