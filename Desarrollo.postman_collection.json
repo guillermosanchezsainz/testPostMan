@@ -1,0 +1,82 @@
+{
+	"info": {
+		"_postman_id": "387c4470-6914-49bb-8fc9-42e30b25b52e",
+		"name": "Desarrollo",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "4147655"
+	},
+	"item": [
+		{
+			"name": "Connect Copy",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"let responseData = pm.response.json();\r",
+							"let token = responseData.Connect.SessionKey;\r",
+							"pm.environment.set(\"SessionKey\", token);\r",
+							"pm.environment.set(\"PruebaNadaVieneDelConnect\", token);\r",
+							"console.log(token)"
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"var moment = require('moment');\r",
+							"var currentdate = moment().format((\"DD/MM/YYYY\"))\r",
+							"var oneMonthAgo = moment().add(-1, 'M').format((\"DD/MM/YYYY\"));\r",
+							"var twoMonthAgo = moment().add(-2, 'M').format((\"DD/MM/YYYY\"));\r",
+							"var threeMonthAgo = moment().add(-3, 'M').format((\"DD/MM/YYYY\"));\r",
+							"var fourMonthAgo = moment().add(-4, 'M').format((\"DD/MM/YYYY\"));\r",
+							"var fiveMonthAgo = moment().add(-5, 'M').format((\"DD/MM/YYYY\"));\r",
+							"var sixMonthAgo = moment().add(-6, 'M').format((\"DD/MM/YYYY\"));\r",
+							"var oneYearAgo = moment().add(-1, 'Y').format((\"DD/MM/YYYY\"));\r",
+							"var twoYearAgo = moment().add(-2, 'Y').format((\"DD/MM/YYYY\"));\r",
+							"\r",
+							"pm.environment.set('currentdate',currentdate );\r",
+							"pm.environment.set('oneMonthAgo',oneMonthAgo );\r",
+							"pm.environment.set('twoMonthAgo',twoMonthAgo );\r",
+							"pm.environment.set('threeMonthAgo',threeMonthAgo );\r",
+							"pm.environment.set('fourMonthAgo',fourMonthAgo );\r",
+							"pm.environment.set('fiveMonthAgo',fiveMonthAgo );\r",
+							"pm.environment.set('sixMonthAgo',sixMonthAgo );\r",
+							"pm.environment.set('oneYearAgo',oneYearAgo );\r",
+							"pm.environment.set('twoYearAgo',twoYearAgo );\r",
+							"\r",
+							"console.log(currentdate)\r",
+							"console.log(twoYearAgo)"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"Connect\":{\"@UidApp\":\"B49D2CE699\",\"@PwdApp\":\"B0\",\"@SessionKey\":\"EA5BD0713633FEB5A1DEA91E0B272EAB\",\"@Product\":\"2\",\"@LanguageId\":\"8\",\"@RequestID\":\"1\"}}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/Connect",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"Connect"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
